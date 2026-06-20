@@ -4,7 +4,6 @@ import { useTypewriter } from './hooks/useTypewriter';
 // Import local assets
 import redbullLogo from '@/src/assets/redbull-logo-new.png';
 import arQrCode from '@/src/assets/ar-qr-code.png';
-import { ModelViewer } from '@/components/ui/model-viewer';
 
 export default function StratosLanding() {
   const [activeSection, setActiveSection] = useState<string>('hero');
@@ -20,6 +19,15 @@ export default function StratosLanding() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const targetTimeRef = useRef<number>(0);
   const [isQrOpen, setIsQrOpen] = useState(false);
+
+  const handleArClick = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+    if (isMobile) {
+      window.open("https://player.onirix.com/exp/lNgXVJ?&background=alpha&preview=false&hide_controls=false&ar_button=false", "_blank");
+    } else {
+      setIsQrOpen(true);
+    }
+  };
 
   // Track mouse movement for Page 1 background video scrubbing target
   useEffect(() => {
@@ -299,7 +307,7 @@ export default function StratosLanding() {
             </button>
             
             <button
-              onClick={() => setIsQrOpen(true)}
+              onClick={handleArClick}
               className="inline-flex items-center justify-center bg-[#ef4444] text-white border border-[#ef4444] rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-[#dc2626] transition-colors duration-200 cursor-pointer focus:outline-none gap-2 font-semibold"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-[1px]">
@@ -380,10 +388,17 @@ export default function StratosLanding() {
               </div>
             </div>
 
-            {/* Center Capsule 3D Model (Local glTF/glb Viewer) */}
+            {/* Center Capsule 3D Model (Onirix WebAR) */}
             <div className="flex justify-center items-center order-1 lg:order-2 w-full">
               <div className="relative w-full aspect-square flex items-center justify-center max-w-[480px] h-[480px] md:h-[480px] px-4 border border-black/10 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg overflow-hidden">
-                <ModelViewer modelUrl="/capsule.glb" />
+                <iframe
+                  id="visor"
+                  src="https://player.onirix.com/exp/lNgXVJ?&background=alpha&preview=false&hide_controls=false&ar_button=false"
+                  title="Red Bull Stratos Capsule 3D Model"
+                  allow="web-share;camera;gyroscope;accelerometer;magnetometer;autoplay;fullscreen;xr-spatial-tracking;geolocation;"
+                  className="w-full h-full bg-transparent"
+                  style={{ border: 'none' }}
+                ></iframe>
               </div>
             </div>
 
