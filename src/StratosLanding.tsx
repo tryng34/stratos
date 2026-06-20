@@ -4,6 +4,7 @@ import { useTypewriter } from './hooks/useTypewriter';
 // Import local assets
 import redbullLogo from '@/src/assets/redbull-logo-new.png';
 import arQrCode from '@/src/assets/ar-qr-code.png';
+import { ModelViewer } from '@/components/ui/model-viewer';
 
 export default function StratosLanding() {
   const [activeSection, setActiveSection] = useState<string>('hero');
@@ -388,17 +389,10 @@ export default function StratosLanding() {
               </div>
             </div>
 
-            {/* Center Capsule 3D Model (Onirix WebAR) */}
+            {/* Center Capsule 3D Model (Local glTF/glb Viewer) */}
             <div className="flex justify-center items-center order-1 lg:order-2 w-full">
               <div className="relative w-full aspect-square flex items-center justify-center max-w-[480px] h-[480px] md:h-[480px] px-4 border border-black/10 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg overflow-hidden">
-                <iframe
-                  id="visor"
-                  src="https://player.onirix.com/exp/lNgXVJ?&background=alpha&preview=false&hide_controls=false&ar_button=false"
-                  title="Red Bull Stratos Capsule 3D Model"
-                  allow="web-share;camera;gyroscope;accelerometer;magnetometer;autoplay;fullscreen;xr-spatial-tracking;geolocation;"
-                  className="w-full h-full bg-transparent"
-                  style={{ border: 'none' }}
-                ></iframe>
+                <ModelViewer modelUrl="https://res.cloudinary.com/dn3eitc0b/image/upload/q_auto/f_auto/v1781979902/capsule_obdlwo.glb" />
               </div>
             </div>
 
