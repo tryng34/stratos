@@ -238,11 +238,11 @@ export default function StratosLanding() {
 
             {/* Campaign slogan */}
             <div
-              className={`text-white font-extrabold mb-6 text-[20px] sm:text-[25px] tracking-wide uppercase transition-all duration-700 ${
+              className={`font-heading text-white font-black mb-6 text-[32px] sm:text-[42px] tracking-[0.06em] uppercase transition-all duration-700 ${
                 done ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}
             >
-              Chiến dịch Redbull Stratos
+              Chiến dịch <span className="text-[#ff002b]">Redbull</span> Stratos
             </div>
 
             {/* Action pill buttons */}

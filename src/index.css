@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
-  --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Big Shoulders', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Comfortaa', 'Helvetica Neue', Arial, sans-serif;
 }
 
 @theme {
