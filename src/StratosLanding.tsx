@@ -370,7 +370,7 @@ export default function StratosLanding() {
 
             {/* Center Capsule 3D Model (Sketchfab Embed) */}
             <div className="flex justify-center items-center order-1 lg:order-2 w-full">
-              <div className="relative w-full aspect-square flex flex-col items-center justify-center max-w-[560px] h-[560px] md:h-[560px] px-4 overflow-visible pointer-events-auto">
+              <div className="relative w-full aspect-square flex flex-col items-center justify-center max-w-[560px] px-4 overflow-visible pointer-events-auto">
                 <div className="relative w-full h-full bg-zinc-900/40 border border-white/10 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-md">
                   <iframe
                     title="Capsule Redbull"
