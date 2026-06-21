@@ -368,29 +368,21 @@ export default function StratosLanding() {
               </div>
             </div>
 
-            {/* Center Capsule 3D Model (Sketchfab Embed) */}
+            {/* Center Capsule 3D Model (Supavoxel Embed) */}
             <div className="flex justify-center items-center order-1 lg:order-2 w-full">
               <div className="relative w-full aspect-square flex flex-col items-center justify-center max-w-[560px] h-[560px] md:h-[560px] px-4 overflow-visible pointer-events-auto">
                 <div className="relative w-full h-full bg-zinc-900/40 border border-white/10 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-md">
                   <iframe
-                    title="Capsule Redbull"
+                    title="Capsule Redbull Voxel"
                     frameBorder="0"
                     allowFullScreen
-                    allow="autoplay; fullscreen; xr-spatial-tracking"
-                    src="https://sketchfab.com/models/41adfc04ccbe4568af79f50b3af95833/embed?autostart=1&transparent=1&ui_controls=1&ui_infos=0&ui_inspector=0&ui_watermark=0&ui_hint=0&dark_mode=1"
+                    src="https://supavoxel.com/embed/cmqn7e5s102i3100ztlvwgbld"
                     className="absolute inset-0 w-full h-full"
-                    {...{
-                      "mozallowfullscreen": "true",
-                      "webkitallowfullscreen": "true",
-                      "xr-spatial-tracking": "true",
-                      "execution-while-out-of-viewport": "true",
-                      "execution-while-not-rendered": "true",
-                      "web-share": "true"
-                    }}
+                    style={{ border: 'none' }}
                   ></iframe>
                 </div>
                 <p className="mt-3 text-xs text-zinc-500 text-center font-normal">
-                  <a href="https://sketchfab.com/3d-models/capsule-redbull-41adfc04ccbe4568af79f50b3af95833" target="_blank" rel="nofollow" className="font-semibold text-red-500 hover:underline">Capsule Redbull</a> by <a href="https://sketchfab.com/Try_ng" target="_blank" rel="nofollow" className="font-semibold text-red-500 hover:underline">Try_ng</a> on Sketchfab
+                  <a href="https://supavoxel.com/embed/cmqn7e5s102i3100ztlvwgbld" target="_blank" rel="nofollow" className="font-semibold text-red-500 hover:underline">Capsule Redbull Voxel</a> on Supavoxel
                 </p>
               </div>
             </div>
