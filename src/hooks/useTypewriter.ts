@@ -1,34 +1,30 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 export function useTypewriter(text: string, speed = 38, startDelay = 600) {
   const [displayed, setDisplayed] = useState('');
   const [done, setDone] = useState(false);
-  const indexRef = useRef(0);
 
   useEffect(() => {
-    // Reset state if text changes
+    let index = 0;
     setDisplayed('');
     setDone(false);
-    indexRef.current = 0;
 
-    let timeoutId: number;
-    let intervalId: number;
-
-    timeoutId = window.setTimeout(() => {
-      intervalId = window.setInterval(() => {
-        if (indexRef.current < text.length) {
-          setDisplayed((prev) => prev + text.charAt(indexRef.current));
-          indexRef.current += 1;
+    const timeoutId = setTimeout(() => {
+      const intervalId = setInterval(() => {
+        if (index < text.length) {
+          setDisplayed(text.slice(0, index + 1));
+          index++;
         } else {
           setDone(true);
-          window.clearInterval(intervalId);
+          clearInterval(intervalId);
         }
       }, speed);
+
+      return () => clearInterval(intervalId);
     }, startDelay);
 
     return () => {
-      window.clearTimeout(timeoutId);
-      window.clearInterval(intervalId);
+      clearTimeout(timeoutId);
     };
   }, [text, speed, startDelay]);
 
